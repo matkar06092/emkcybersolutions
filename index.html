@@ -1,0 +1,276 @@
+
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#07111f">
+  <meta name="description" content="EMK Cyber Solutions erbjuder IT-support, datorhjälp, nätverk, cybersäkerhet och webbutveckling.">
+  <title>EMK Cyber Solutions | IT-support & cybersäkerhet</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+  <header class="site-header">
+    <a class="brand" href="#hem" aria-label="EMK Cyber Solutions - startsida">
+      <img src="logo.png" alt="EMK Cyber Solutions logotyp" class="brand-logo">
+      <span class="brand-name">EMK <strong>Cyber Solutions</strong></span>
+    </a>
+
+    <nav class="main-nav" aria-label="Huvudmeny">
+      <a href="#tjanster" data-i18n="navServices">Tjänster</a>
+      <a href="#priser" data-i18n="navPrices">Priser</a>
+      <a href="#om-oss" data-i18n="navAbout">Om oss</a>
+      <a href="#kontakt" data-i18n="navContact">Kontakt</a>
+    </nav>
+
+    <div class="header-actions">
+      <button id="language-toggle" class="language-toggle" type="button" aria-label="Switch language">
+        English
+      </button>
+      <a class="header-contact" href="#kontakt" data-i18n="navGetHelp">Få hjälp</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero section" id="hem">
+      <div class="hero-content">
+        <p class="eyebrow" data-i18n="heroEyebrow">IT-SUPPORT · SÄKERHET · WEBBUTVECKLING</p>
+        <h1 data-i18n="heroTitle">Teknik som fungerar. Säkerhet du kan lita på.</h1>
+        <p class="hero-description" data-i18n="heroText">
+          Praktisk IT-hjälp för privatpersoner och mindre verksamheter.
+          Från datorproblem och Wi-Fi till cybersäkerhet och hemsidor.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#tjanster" class="button button-primary" data-i18n="heroServices">Se våra tjänster</a>
+          <a href="#kontakt" class="button button-secondary" data-i18n="heroContact">Kontakta oss</a>
+        </div>
+
+        <div class="hero-points">
+          <span><span class="status-dot"></span><span data-i18n="heroPoint1">Tydliga priser</span></span>
+          <span><span class="status-dot"></span><span data-i18n="heroPoint2">Personlig IT-hjälp</span></span>
+          <span><span class="status-dot"></span><span data-i18n="heroPoint3">Distansservice</span></span>
+        </div>
+      </div>
+
+      <div class="hero-visual" aria-label="EMK Cyber Solutions">
+        <div class="visual-orbit orbit-one"></div>
+        <div class="visual-orbit orbit-two"></div>
+        <div class="visual-core">
+          <img src="logo.png" alt="EMK Cyber Solutions" class="hero-logo">
+        </div>
+        <div class="floating-label label-top">
+          <span class="mini-dot"></span>
+          <span data-i18n="visualSecurity">Digital säkerhet</span>
+        </div>
+        <div class="floating-label label-bottom">
+          <span class="mini-dot"></span>
+          <span data-i18n="visualSupport">IT-support</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="trust-strip" aria-label="Tjänsteinformation">
+      <div>
+        <strong data-i18n="strip1Title">IT-support</strong>
+        <span data-i18n="strip1Text">Felsökning och problemlösning</span>
+      </div>
+      <div>
+        <strong data-i18n="strip2Title">Cybersäkerhet</strong>
+        <span data-i18n="strip2Text">Skydd och säkerhetsråd</span>
+      </div>
+      <div>
+        <strong data-i18n="strip3Title">Webbutveckling</strong>
+        <span data-i18n="strip3Text">Hemsidor för företag och föreningar</span>
+      </div>
+    </section>
+
+    <section class="section" id="tjanster">
+      <div class="section-heading">
+        <p class="eyebrow" data-i18n="servicesEyebrow">VAD VI HJÄLPER TILL MED</p>
+        <h2 data-i18n="servicesTitle">IT-tjänster för verkliga behov</h2>
+        <p data-i18n="servicesIntro">
+          Från vardagliga datorproblem till digital säkerhet och webbprojekt.
+        </p>
+      </div>
+
+      <div class="services-grid">
+        <article class="service-card">
+          <div class="service-icon" aria-hidden="true">⌘</div>
+          <h3 data-i18n="service1Title">Datorhjälp</h3>
+          <p data-i18n="service1Text">Felsökning, programproblem och hjälp med datorns funktioner.</p>
+          <a href="#priser" data-i18n="servicePriceLink">Se priser →</a>
+        </article>
+
+        <article class="service-card">
+          <div class="service-icon" aria-hidden="true">⌁</div>
+          <h3 data-i18n="service2Title">Internet & Wi-Fi</h3>
+          <p data-i18n="service2Text">Hjälp med nätverksproblem, router, Wi-Fi och uppkoppling.</p>
+          <a href="#priser" data-i18n="servicePriceLink">Se priser →</a>
+        </article>
+
+        <article class="service-card">
+          <div class="service-icon" aria-hidden="true">⛨</div>
+          <h3 data-i18n="service3Title">Virus & säkerhet</h3>
+          <p data-i18n="service3Text">Säkerhetskontroller, skydd och hjälp med misstänkt skadlig programvara.</p>
+          <a href="#priser" data-i18n="servicePriceLink">Se priser →</a>
+        </article>
+
+        <article class="service-card">
+          <div class="service-icon" aria-hidden="true">⚙</div>
+          <h3 data-i18n="service4Title">Installation</h3>
+          <p data-i18n="service4Text">Installation och konfigurering av program, datorer och tillbehör.</p>
+          <a href="#priser" data-i18n="servicePriceLink">Se priser →</a>
+        </article>
+
+        <article class="service-card">
+          <div class="service-icon" aria-hidden="true">⌁</div>
+          <h3 data-i18n="service5Title">Optimering</h3>
+          <p data-i18n="service5Text">Rensning, underhåll och hjälp med en långsam dator.</p>
+          <a href="#priser" data-i18n="servicePriceLink">Se priser →</a>
+        </article>
+
+        <article class="service-card">
+          <div class="service-icon" aria-hidden="true">⌘</div>
+          <h3 data-i18n="service6Title">Hemsidor & webbutveckling</h3>
+          <p data-i18n="service6Text">Webbplatser för företag och föreningar, anpassade efter behov.</p>
+          <a href="#kontakt" data-i18n="serviceContactLink">Begär offert →</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="pricing-section section" id="priser">
+      <div class="section-heading">
+        <p class="eyebrow" data-i18n="pricingEyebrow">TYDLIGA PRISER</p>
+        <h2 data-i18n="pricingTitle">Vad kostar IT-hjälp?</h2>
+        <p data-i18n="pricingIntro">Fasta grundpriser inklusive moms för privatpersoner.</p>
+      </div>
+
+      <div class="currency-panel">
+        <label for="currency-select" data-i18n="currencyLabel">Visa priser i</label>
+        <select id="currency-select" name="currency">
+          <option value="SEK">SEK — Svenska kronor</option>
+          <option value="EUR">EUR — Euro</option>
+          <option value="USD">USD — US-dollar</option>
+        </select>
+        <p id="currency-status" class="currency-status" role="status" aria-live="polite">
+          Priserna visas i svenska kronor.
+        </p>
+      </div>
+
+      <div class="price-list">
+        <article class="price-row">
+          <div>
+            <h3 data-i18n="price1Title">Datorhjälp</h3>
+            <p data-i18n="price1Text">Felsökning och vanlig datorhjälp.</p>
+          </div>
+          <strong class="price-value" data-price-sek="749">749 kr</strong>
+        </article>
+
+        <article class="price-row">
+          <div>
+            <h3 data-i18n="price2Title">Internet & Wi-Fi</h3>
+            <p data-i18n="price2Text">Hjälp med internet och nätverksproblem.</p>
+          </div>
+          <strong class="price-value" data-price-sek="849">849 kr</strong>
+        </article>
+
+        <article class="price-row">
+          <div>
+            <h3 data-i18n="price3Title">Virus & säkerhet</h3>
+            <p data-i18n="price3Text">Säkerhetskontroll och hjälp med skadlig programvara.</p>
+          </div>
+          <strong class="price-value" data-price-sek="849">849 kr</strong>
+        </article>
+
+        <article class="price-row">
+          <div>
+            <h3 data-i18n="price4Title">Installation & konfigurering</h3>
+            <p data-i18n="price4Text">Installation och grundläggande inställningar.</p>
+          </div>
+          <strong class="price-value" data-price-sek="949">949 kr</strong>
+        </article>
+
+        <article class="price-row">
+          <div>
+            <h3 data-i18n="price5Title">Rensning & optimering</h3>
+            <p data-i18n="price5Text">Rensning och prestandaförbättring.</p>
+          </div>
+          <strong class="price-value" data-price-sek="649">649 kr</strong>
+        </article>
+      </div>
+
+      <p class="pricing-note" data-i18n="pricingNote">
+        Hemsidor och större uppdrag prissätts separat. Hembesök och eventuell
+        resekostnad tillkommer efter överenskommelse.
+      </p>
+
+      <p class="currency-disclaimer" data-i18n="currencyDisclaimer">
+        Priser i EUR och USD är uppskattningar baserade på växelkursen, inte fasta
+        priser. Det slutliga priset och betalningsvalutan bekräftas vid offert eller bokning.
+      </p>
+    </section>
+
+    <section class="about-section section" id="om-oss">
+      <div class="about-logo-wrap">
+        <img src="logo.png" alt="EMK Cyber Solutions logotyp" class="about-logo">
+      </div>
+
+      <div class="about-content">
+        <p class="eyebrow" data-i18n="aboutEyebrow">OM EMK CYBER SOLUTIONS</p>
+        <h2 data-i18n="aboutTitle">Personlig service. Smarta lösningar.</h2>
+        <p data-i18n="aboutText">
+          EMK Cyber Solutions erbjuder praktisk IT-hjälp, teknisk support och
+          webbutveckling med fokus på tydlig kommunikation och lösningar som passar
+          kundens behov.
+        </p>
+
+        <ul class="about-list">
+          <li data-i18n="aboutPoint1">Tydlig information innan arbetet börjar</li>
+          <li data-i18n="aboutPoint2">Distanshjälp och service efter överenskommelse</li>
+          <li data-i18n="aboutPoint3">Lösningar för privatpersoner och mindre verksamheter</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="contact-section section" id="kontakt">
+      <div class="contact-content">
+        <p class="eyebrow" data-i18n="contactEyebrow">KONTAKTA OSS</p>
+        <h2 data-i18n="contactTitle">Behöver du IT-hjälp?</h2>
+        <p data-i18n="contactText">
+          Beskriv kort vad du behöver hjälp med så kan vi diskutera nästa steg.
+        </p>
+
+        <a class="button button-primary" href="mailto:kontakt@emkcybersolutions.com">
+          <span data-i18n="contactEmailButton">Skicka e-post</span>
+        </a>
+
+        <p class="contact-email">
+          <a href="mailto:kontakt@emkcybersolutions.com">kontakt@emkcybersolutions.com</a>
+        </p>
+      </div>
+
+      <div class="contact-side">
+        <div class="contact-info-card">
+          <span class="contact-card-label" data-i18n="contactBusinessLabel">Företag</span>
+          <strong>EMK Cyber Solutions</strong>
+          <span data-i18n="contactLocation">Borlänge med omnejd · Distansservice</span>
+        </div>
+        <div class="contact-info-card">
+          <span class="contact-card-label" data-i18n="contactServicesLabel">Tjänster</span>
+          <strong data-i18n="contactServicesText">IT-support, säkerhet och webb</strong>
+          <span data-i18n="contactQuoteText">Webbprojekt offereras separat.</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <a class="footer-brand" href="#hem">EMK <strong>Cyber Solutions</strong></a>
+    <p>© <span id="current-year"></span> EMK Cyber Solutions</p>
+    <a href="#hem" data-i18n="backToTop">Till toppen ↑</a>
+  </footer>
+</body>
+</html>
