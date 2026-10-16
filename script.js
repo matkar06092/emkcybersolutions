@@ -9,34 +9,32 @@ const translations = {
     navContact: "Kontakt",
     navGetHelp: "Få hjälp",
 
-    heroEyebrow: "IT-SUPPORT · SÄKERHET · WEBBUTVECKLING",
-    heroTitle: "Teknik som fungerar. Säkerhet du kan lita på.",
-    heroText: "Praktisk IT-hjälp för privatpersoner och mindre verksamheter. Från datorproblem och Wi-Fi till cybersäkerhet och hemsidor.",
+    heroEyebrow: "IT-SUPPORT · NÄTVERK · WEBBUTVECKLING",
+    heroTitle: "Teknik som fungerar. Hjälp när du behöver den.",
+    heroText: "Praktisk IT-hjälp för privatpersoner och mindre verksamheter. Från datorproblem och Wi-Fi till installationer och hemsidor.",
     heroServices: "Se våra tjänster",
     heroContact: "Kontakta oss",
     heroPoint1: "Tydliga priser",
     heroPoint2: "Personlig IT-hjälp",
     heroPoint3: "Distansservice",
-    visualSecurity: "Digital säkerhet",
+    visualWeb: "Webbutveckling",
     visualSupport: "IT-support",
 
     strip1Title: "IT-support",
     strip1Text: "Felsökning och problemlösning",
-    strip2Title: "Cybersäkerhet",
-    strip2Text: "Skydd och säkerhetsråd",
+    strip2Title: "Nätverk & Wi-Fi",
+    strip2Text: "Hjälp med uppkoppling och nätverk",
     strip3Title: "Webbutveckling",
     strip3Text: "Hemsidor för företag och föreningar",
 
     servicesEyebrow: "VAD VI HJÄLPER TILL MED",
     servicesTitle: "IT-tjänster för verkliga behov",
-    servicesIntro: "Från vardagliga datorproblem till digital säkerhet och webbprojekt.",
+    servicesIntro: "Praktisk datorhjälp, nätverk, installationer och webbprojekt.",
 
     service1Title: "Datorhjälp",
     service1Text: "Felsökning, programproblem och hjälp med datorns funktioner.",
     service2Title: "Internet & Wi-Fi",
     service2Text: "Hjälp med nätverksproblem, router, Wi-Fi och uppkoppling.",
-    service3Title: "Virus & säkerhet",
-    service3Text: "Säkerhetskontroller, skydd och hjälp med misstänkt skadlig programvara.",
     service4Title: "Installation",
     service4Text: "Installation och konfigurering av program, datorer och tillbehör.",
     service5Title: "Optimering",
@@ -60,8 +58,6 @@ const translations = {
     price1Text: "Felsökning och vanlig datorhjälp.",
     price2Title: "Internet & Wi-Fi",
     price2Text: "Hjälp med internet och nätverksproblem.",
-    price3Title: "Virus & säkerhet",
-    price3Text: "Säkerhetskontroll och hjälp med skadlig programvara.",
     price4Title: "Installation & konfigurering",
     price4Text: "Installation och grundläggande inställningar.",
     price5Title: "Rensning & optimering",
@@ -82,7 +78,7 @@ const translations = {
     contactBusinessLabel: "Företag",
     contactLocation: "Borlänge med omnejd · Distansservice",
     contactServicesLabel: "Tjänster",
-    contactServicesText: "IT-support, säkerhet och webb",
+    contactServicesText: "IT-support, nätverk och webb",
     contactQuoteText: "Webbprojekt offereras separat.",
     backToTop: "Till toppen ↑"
   },
@@ -94,34 +90,32 @@ const translations = {
     navContact: "Contact",
     navGetHelp: "Get help",
 
-    heroEyebrow: "IT SUPPORT · SECURITY · WEB DEVELOPMENT",
-    heroTitle: "Technology that works. Security you can trust.",
-    heroText: "Practical IT support for individuals and small businesses. From computer issues and Wi-Fi to cybersecurity and websites.",
+    heroEyebrow: "IT SUPPORT · NETWORKING · WEB DEVELOPMENT",
+    heroTitle: "Technology that works. Help when you need it.",
+    heroText: "Practical IT support for individuals and small businesses. From computer issues and Wi-Fi to installations and websites.",
     heroServices: "Explore services",
     heroContact: "Contact us",
     heroPoint1: "Clear pricing",
     heroPoint2: "Personal IT support",
     heroPoint3: "Remote support",
-    visualSecurity: "Digital security",
+    visualWeb: "Web development",
     visualSupport: "IT support",
 
     strip1Title: "IT support",
     strip1Text: "Troubleshooting and problem solving",
-    strip2Title: "Cybersecurity",
-    strip2Text: "Protection and security advice",
+    strip2Title: "Networking & Wi-Fi",
+    strip2Text: "Help with connectivity and networks",
     strip3Title: "Web development",
     strip3Text: "Websites for businesses and associations",
 
     servicesEyebrow: "HOW WE CAN HELP",
     servicesTitle: "IT services for real-world needs",
-    servicesIntro: "From everyday computer problems to digital security and website projects.",
+    servicesIntro: "Practical computer support, networking, installations and website projects.",
 
     service1Title: "Computer support",
     service1Text: "Troubleshooting, software issues and help with computer functions.",
     service2Title: "Internet & Wi-Fi",
     service2Text: "Help with network issues, routers, Wi-Fi and connectivity.",
-    service3Title: "Viruses & security",
-    service3Text: "Security checks, protection and help with suspected malware.",
     service4Title: "Installation",
     service4Text: "Installation and configuration of software, computers and accessories.",
     service5Title: "Cleanup & optimisation",
@@ -145,8 +139,6 @@ const translations = {
     price1Text: "Troubleshooting and general computer assistance.",
     price2Title: "Internet & Wi-Fi",
     price2Text: "Help with internet and network issues.",
-    price3Title: "Viruses & security",
-    price3Text: "Security checks and help with malware.",
     price4Title: "Installation & configuration",
     price4Text: "Installation and basic configuration.",
     price5Title: "Cleanup & optimisation",
@@ -167,7 +159,7 @@ const translations = {
     contactBusinessLabel: "Business",
     contactLocation: "Borlänge area · Remote support",
     contactServicesLabel: "Services",
-    contactServicesText: "IT support, security and websites",
+    contactServicesText: "IT support, networking and websites",
     contactQuoteText: "Website projects are quoted separately.",
     backToTop: "Back to top ↑"
   }
@@ -194,14 +186,14 @@ function translatePage(language) {
 
   document.documentElement.lang = currentLanguage;
   document.title = currentLanguage === "en"
-    ? "EMK Cyber Solutions | IT Support & Cybersecurity"
-    : "EMK Cyber Solutions | IT-support & cybersäkerhet";
+    ? "EMK Cyber Solutions | IT Support & Web Development"
+    : "EMK Cyber Solutions | IT-support & webbutveckling";
 
   document.querySelectorAll("[data-i18n]").forEach((element) => {
     const key = element.dataset.i18n;
     const translatedText = translations[currentLanguage][key];
 
-    if (translatedText) {
+    if (translatedText !== undefined) {
       element.textContent = translatedText;
     }
   });
@@ -265,7 +257,6 @@ function renderPrices() {
       selectedRate > 0
     );
 
-  // SEK är alltid tillgängligt. Saknas kursdata visas inga uppskattade priser.
   const displayCurrency = conversionIsValid ? currentCurrency : "SEK";
   const rate = displayCurrency === "SEK" ? 1 : selectedRate;
 
@@ -301,7 +292,6 @@ function setCurrency(currency) {
     currency = "SEK";
   }
 
-  // EUR/USD kan endast väljas när en giltig kurs finns.
   if (currency !== "SEK" && !ratesAvailable) {
     currentCurrency = "SEK";
     renderPrices();
@@ -361,11 +351,11 @@ async function loadExchangeRates() {
       ? new Date(timestamp * 1000)
       : null;
 
-    ratesAvailable = true;
+    ratesAvailable = Boolean(
+      rateUpdatedAt && !Number.isNaN(rateUpdatedAt.getTime())
+    );
 
-    // Om tjänsten saknar uppdateringsdatum använder vi inte uppskattningar.
-    if (!rateUpdatedAt || Number.isNaN(rateUpdatedAt.getTime())) {
-      ratesAvailable = false;
+    if (!ratesAvailable) {
       currentCurrency = "SEK";
     }
 
@@ -386,7 +376,10 @@ function initialiseCurrency() {
   try {
     const storedCurrency = localStorage.getItem("emkcs-currency");
 
-    if (storedCurrency && Object.prototype.hasOwnProperty.call(currencySettings, storedCurrency)) {
+    if (
+      storedCurrency &&
+      Object.prototype.hasOwnProperty.call(currencySettings, storedCurrency)
+    ) {
       savedCurrency = storedCurrency;
     }
   } catch {
