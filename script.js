@@ -10,7 +10,7 @@ const translations = {
     navGetHelp: "Få hjälp",
 
     heroEyebrow: "IT-SUPPORT · NÄTVERK · WEBBUTVECKLING",
-    heroTitle: "Teknik som fungerar. Hjälp när du behöver den.",
+    heroTitle: "Din partner i en digital värld.",
     heroText: "Praktisk IT-hjälp för privatpersoner och mindre verksamheter. Från datorproblem och Wi-Fi till installationer och hemsidor.",
     heroServices: "Se våra tjänster",
     heroContact: "Kontakta oss",
@@ -91,7 +91,7 @@ const translations = {
     navGetHelp: "Get help",
 
     heroEyebrow: "IT SUPPORT · NETWORKING · WEB DEVELOPMENT",
-    heroTitle: "Technology that works. Help when you need it.",
+    heroTitle: "Your partner in a digital world.",
     heroText: "Practical IT support for individuals and small businesses. From computer issues and Wi-Fi to installations and websites.",
     heroServices: "Explore services",
     heroContact: "Contact us",
