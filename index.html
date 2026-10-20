@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#07111f">
   <meta name="description" content="EMK Cyber Solutions erbjuder IT-support, datorhjälp, nätverk, Wi-Fi, installation och webbutveckling för kunder på distans och efter överenskommelse på plats.">
-  <title>EMK Cyber Solutions | IT-support & webbutveckling</title>
+  <title>EMK Cyber Solutions | IT-support &amp; webbutveckling</title>
   <link rel="stylesheet" href="style.css">
   <script src="script.js" defer></script>
 </head>
@@ -78,7 +78,7 @@
         <span data-i18n="strip1Text">Felsökning och problemlösning</span>
       </div>
       <div>
-        <strong data-i18n="strip2Title">Nätverk & Wi-Fi</strong>
+        <strong data-i18n="strip2Title">Nätverk &amp; Wi-Fi</strong>
         <span data-i18n="strip2Text">Hjälp med uppkoppling och nätverk</span>
       </div>
       <div>
@@ -106,7 +106,7 @@
 
         <article class="service-card">
           <div class="service-icon" aria-hidden="true">⌁</div>
-          <h3 data-i18n="service2Title">Internet & Wi-Fi</h3>
+          <h3 data-i18n="service2Title">Internet &amp; Wi-Fi</h3>
           <p data-i18n="service2Text">Hjälp med nätverksproblem, router, Wi-Fi och uppkoppling.</p>
           <a href="#priser" data-i18n="servicePriceLink">Se priser →</a>
         </article>
@@ -127,7 +127,7 @@
 
         <article class="service-card">
           <div class="service-icon" aria-hidden="true">⌘</div>
-          <h3 data-i18n="service6Title">Hemsidor & webbutveckling</h3>
+          <h3 data-i18n="service6Title">Hemsidor &amp; webbutveckling</h3>
           <p data-i18n="service6Text">Webbplatser för företag och föreningar, anpassade efter behov.</p>
           <a href="#kontakt" data-i18n="serviceContactLink">Begär offert →</a>
         </article>
@@ -164,7 +164,7 @@
 
         <article class="price-row">
           <div>
-            <h3 data-i18n="price2Title">Internet & Wi-Fi</h3>
+            <h3 data-i18n="price2Title">Internet &amp; Wi-Fi</h3>
             <p data-i18n="price2Text">Hjälp med internet och nätverksproblem.</p>
           </div>
           <strong class="price-value" data-price-sek="849">849 kr</strong>
@@ -172,7 +172,7 @@
 
         <article class="price-row">
           <div>
-            <h3 data-i18n="price4Title">Installation & konfigurering</h3>
+            <h3 data-i18n="price4Title">Installation &amp; konfigurering</h3>
             <p data-i18n="price4Text">Installation och grundläggande inställningar.</p>
           </div>
           <strong class="price-value" data-price-sek="949">949 kr</strong>
@@ -180,7 +180,7 @@
 
         <article class="price-row">
           <div>
-            <h3 data-i18n="price5Title">Rensning & optimering</h3>
+            <h3 data-i18n="price5Title">Rensning &amp; optimering</h3>
             <p data-i18n="price5Text">Rensning och prestandaförbättring.</p>
           </div>
           <strong class="price-value" data-price-sek="649">649 kr</strong>
@@ -242,6 +242,12 @@
           action="https://formspree.io/f/myekaagd"
           method="POST"
         >
+          <input
+            type="hidden"
+            name="_subject"
+            value="Ny kundförfrågan – EMK Cyber Solutions"
+          >
+
           <div class="form-field">
             <label for="contact-name">Namn *</label>
             <input
@@ -269,14 +275,26 @@
           </div>
 
           <div class="form-field">
+            <label for="contact-phone">Telefonnummer (valfritt)</label>
+            <input
+              id="contact-phone"
+              type="tel"
+              name="phone"
+              placeholder="Ditt telefonnummer"
+              autocomplete="tel"
+              maxlength="30"
+            >
+          </div>
+
+          <div class="form-field">
             <label for="contact-service">Vad behöver du hjälp med? *</label>
             <select id="contact-service" name="service" required>
               <option value="">Välj en tjänst</option>
               <option value="Datorhjälp">Datorhjälp</option>
-              <option value="Internet och Wi-Fi">Internet & Wi-Fi</option>
-              <option value="Installation och konfigurering">Installation & konfigurering</option>
-              <option value="Rensning och optimering">Rensning & optimering</option>
-              <option value="Webbutveckling">Hemsidor & webbutveckling</option>
+              <option value="Internet och Wi-Fi">Internet &amp; Wi-Fi</option>
+              <option value="Installation och konfigurering">Installation &amp; konfigurering</option>
+              <option value="Rensning och optimering">Rensning &amp; optimering</option>
+              <option value="Webbutveckling">Hemsidor &amp; webbutveckling</option>
               <option value="Företag eller BRF">Företag eller BRF</option>
               <option value="Annat">Annat ärende</option>
             </select>
@@ -294,14 +312,9 @@
             ></textarea>
           </div>
 
-          <input
-            type="hidden"
-            name="_subject"
-            value="Ny kundförfrågan – EMK Cyber Solutions"
-          >
-
+          <!-- Dolt spamfilterfält. Besökaren ska inte se eller fylla i det. -->
           <div class="form-honeypot" aria-hidden="true">
-            <label for="contact-website">Lämna det här fältet tomt</label>
+            <label for="contact-website">Lämna detta fält tomt</label>
             <input
               id="contact-website"
               type="text"
