@@ -12,6 +12,7 @@ const translations = {
     navGetHelp: "Få hjälp",
     navAriaLabel: "Huvudmeny",
     trustStripAriaLabel: "Tjänsteinformation",
+    heroVisualLabel: "EMK Cyber Solutions",
 
     heroEyebrow: "IT-SUPPORT · NÄTVERK · WEBBUTVECKLING",
     heroTitle: "Din partner i en digital värld.",
@@ -83,7 +84,7 @@ const translations = {
     contactText: "Fyll i formuläret så beskriver du ditt ärende direkt till oss. Vi återkopplar så snart vi kan.",
     contactEmailButton: "Skicka e-post",
     contactBusinessLabel: "Företag",
-    contactLocation: "Borlänge med omnejd · Distansservice",
+    contactLocation: "Distansservice världen över · Hembesök efter överenskommelse",
     contactServicesLabel: "Tjänster",
     contactServicesText: "IT-support, nätverk och webb",
     contactQuoteText: "Webbprojekt offereras separat.",
@@ -91,6 +92,7 @@ const translations = {
     formNameLabel: "Namn *",
     formNamePlaceholder: "Ditt namn",
     formEmailLabel: "E-postadress *",
+    formEmailPlaceholder: "namn@exempel.se",
     formPhoneLabel: "Telefonnummer (valfritt)",
     formPhonePlaceholder: "Ditt telefonnummer",
     formServiceLabel: "Vad behöver du hjälp med? *",
@@ -98,7 +100,7 @@ const translations = {
     formServiceComputer: "Datorhjälp",
     formServiceInternet: "Internet & Wi-Fi",
     formServiceInstallation: "Installation & konfigurering",
-    formServiceCleanup: "Rensning & optimering",
+    formServiceOptimization: "Rensning & optimering",
     formServiceWeb: "Hemsidor & webbutveckling",
     formServiceBusiness: "Företag eller BRF",
     formServiceOther: "Annat ärende",
@@ -122,6 +124,7 @@ const translations = {
     navGetHelp: "Get help",
     navAriaLabel: "Main navigation",
     trustStripAriaLabel: "Service information",
+    heroVisualLabel: "EMK Cyber Solutions",
 
     heroEyebrow: "IT SUPPORT · NETWORKING · WEB DEVELOPMENT",
     heroTitle: "Your partner in a digital world.",
@@ -193,7 +196,7 @@ const translations = {
     contactText: "Complete the form to describe your enquiry directly to us. We will get back to you as soon as we can.",
     contactEmailButton: "Send an email",
     contactBusinessLabel: "Business",
-    contactLocation: "Borlänge area · Remote support",
+    contactLocation: "Remote support worldwide · On-site visits by arrangement",
     contactServicesLabel: "Services",
     contactServicesText: "IT support, networking and websites",
     contactQuoteText: "Website projects are quoted separately.",
@@ -201,6 +204,7 @@ const translations = {
     formNameLabel: "Name *",
     formNamePlaceholder: "Your name",
     formEmailLabel: "Email address *",
+    formEmailPlaceholder: "name@example.com",
     formPhoneLabel: "Phone number (optional)",
     formPhonePlaceholder: "Your phone number",
     formServiceLabel: "What do you need help with? *",
@@ -208,7 +212,7 @@ const translations = {
     formServiceComputer: "Computer support",
     formServiceInternet: "Internet & Wi-Fi",
     formServiceInstallation: "Installation & configuration",
-    formServiceCleanup: "Cleanup & optimisation",
+    formServiceOptimization: "Cleanup & optimisation",
     formServiceWeb: "Websites & web development",
     formServiceBusiness: "Business or housing association",
     formServiceOther: "Other enquiry",
@@ -245,6 +249,7 @@ function translatePage(language) {
   const dictionary = translations[currentLanguage];
 
   document.documentElement.lang = currentLanguage;
+
   document.title = currentLanguage === "en"
     ? "EMK Cyber Solutions | IT Support & Web Development"
     : "EMK Cyber Solutions | IT-support & webbutveckling";
@@ -288,11 +293,19 @@ function translatePage(language) {
   });
 
   if (languageToggle) {
-    languageToggle.textContent = currentLanguage === "sv" ? "English" : "Svenska";
+    languageToggle.textContent =
+      currentLanguage === "sv" ? "English" : "Svenska";
+
     languageToggle.setAttribute(
       "aria-label",
       currentLanguage === "sv" ? "Switch to English" : "Byt till svenska"
     );
+  }
+
+  try {
+    localStorage.setItem("emkcs-language", currentLanguage);
+  } catch {
+    // Språkväxlingen fungerar även om lokal lagring inte är tillgänglig.
   }
 
   renderPrices();
@@ -455,7 +468,10 @@ async function loadExchangeRates() {
     currentCurrency = "SEK";
     renderPrices();
 
-    console.warn("Exchange rates unavailable; displaying SEK prices.", error);
+    console.warn(
+      "Exchange rates unavailable; displaying SEK prices.",
+      error
+    );
   }
 }
 
@@ -487,6 +503,22 @@ function initialiseCurrency() {
   loadExchangeRates();
 }
 
+function initialiseLanguage() {
+  let savedLanguage = "sv";
+
+  try {
+    const storedLanguage = localStorage.getItem("emkcs-language");
+
+    if (storedLanguage === "sv" || storedLanguage === "en") {
+      savedLanguage = storedLanguage;
+    }
+  } catch {
+    // Svenska används som standard om lokal lagring inte är tillgänglig.
+  }
+
+  translatePage(savedLanguage);
+}
+
 if (languageToggle) {
   languageToggle.addEventListener("click", () => {
     translatePage(currentLanguage === "sv" ? "en" : "sv");
@@ -499,5 +531,5 @@ if (yearElement) {
   yearElement.textContent = String(new Date().getFullYear());
 }
 
-translatePage("sv");
+initialiseLanguage();
 initialiseCurrency();
