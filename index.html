@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#07111f">
-  <meta name="description" content="EMK Cyber Solutions erbjuder IT-support, datorhjälp, nätverk, Wi-Fi, installation och webbutveckling i Borlänge med omnejd.">
+  <meta name="description" content="EMK Cyber Solutions erbjuder IT-support, datorhjälp, nätverk, Wi-Fi, installation och webbutveckling för kunder på distans och efter överenskommelse på plats.">
   <title>EMK Cyber Solutions | IT-support & webbutveckling</title>
   <link rel="stylesheet" href="style.css">
   <script src="script.js" defer></script>
@@ -225,24 +225,108 @@
         <p class="eyebrow" data-i18n="contactEyebrow">KONTAKTA OSS</p>
         <h2 data-i18n="contactTitle">Behöver du IT-hjälp?</h2>
         <p data-i18n="contactText">
-          Beskriv kort vad du behöver hjälp med så kan vi diskutera nästa steg.
+          Fyll i formuläret så beskriver du ditt ärende direkt till oss.
+          Vi återkopplar så snart vi kan.
         </p>
 
-        <a class="button button-primary" href="mailto:contact@emkcybersolutions.com">
-          <span data-i18n="contactEmailButton">Skicka e-post</span>
-        </a>
-
         <p class="contact-email">
-          <a href="mailto:contact@emkcybersolutions.com">contact@emkcybersolutions.com</a>
+          <a href="mailto:contact@emkcybersolutions.com">
+            contact@emkcybersolutions.com
+          </a>
         </p>
       </div>
 
       <div class="contact-side">
+        <form
+          class="contact-form"
+          action="https://formspree.io/f/myekaagd"
+          method="POST"
+        >
+          <div class="form-field">
+            <label for="contact-name">Namn *</label>
+            <input
+              id="contact-name"
+              type="text"
+              name="name"
+              placeholder="Ditt namn"
+              autocomplete="name"
+              maxlength="100"
+              required
+            >
+          </div>
+
+          <div class="form-field">
+            <label for="contact-email">E-postadress *</label>
+            <input
+              id="contact-email"
+              type="email"
+              name="email"
+              placeholder="namn@exempel.se"
+              autocomplete="email"
+              maxlength="254"
+              required
+            >
+          </div>
+
+          <div class="form-field">
+            <label for="contact-service">Vad behöver du hjälp med? *</label>
+            <select id="contact-service" name="service" required>
+              <option value="">Välj en tjänst</option>
+              <option value="Datorhjälp">Datorhjälp</option>
+              <option value="Internet och Wi-Fi">Internet & Wi-Fi</option>
+              <option value="Installation och konfigurering">Installation & konfigurering</option>
+              <option value="Rensning och optimering">Rensning & optimering</option>
+              <option value="Webbutveckling">Hemsidor & webbutveckling</option>
+              <option value="Företag eller BRF">Företag eller BRF</option>
+              <option value="Annat">Annat ärende</option>
+            </select>
+          </div>
+
+          <div class="form-field">
+            <label for="contact-message">Meddelande *</label>
+            <textarea
+              id="contact-message"
+              name="message"
+              rows="6"
+              placeholder="Beskriv ditt ärende och vad du behöver hjälp med..."
+              maxlength="5000"
+              required
+            ></textarea>
+          </div>
+
+          <input
+            type="hidden"
+            name="_subject"
+            value="Ny kundförfrågan – EMK Cyber Solutions"
+          >
+
+          <div class="form-honeypot" aria-hidden="true">
+            <label for="contact-website">Lämna det här fältet tomt</label>
+            <input
+              id="contact-website"
+              type="text"
+              name="_gotcha"
+              tabindex="-1"
+              autocomplete="off"
+            >
+          </div>
+
+          <button class="button button-primary contact-submit" type="submit">
+            Skicka förfrågan
+          </button>
+
+          <p class="form-note">
+            Dina uppgifter används för att hantera och besvara din förfrågan.
+            Skicka inte lösenord eller andra känsliga uppgifter via formuläret.
+          </p>
+        </form>
+
         <div class="contact-info-card">
           <span class="contact-card-label" data-i18n="contactBusinessLabel">Företag</span>
           <strong>EMK Cyber Solutions</strong>
-          <span data-i18n="contactLocation">Borlänge med omnejd · Distansservice</span>
+          <span data-i18n="contactLocation">Distansservice · Hembesök efter överenskommelse</span>
         </div>
+
         <div class="contact-info-card">
           <span class="contact-card-label" data-i18n="contactServicesLabel">Tjänster</span>
           <strong data-i18n="contactServicesText">IT-support, nätverk och webb</strong>
