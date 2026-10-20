@@ -414,6 +414,7 @@ img {
 }
 
 .service-card {
+  min-width: 0;
   padding: 27px;
   border: 1px solid var(--border);
   border-radius: var(--radius);
@@ -622,13 +623,14 @@ img {
 
 .contact-section {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
   align-items: start;
-  gap: 50px;
+  gap: clamp(28px, 5vw, 58px);
   border-top: 1px solid var(--border);
 }
 
 .contact-content {
+  min-width: 0;
   padding-top: 8px;
 }
 
@@ -654,31 +656,31 @@ img {
 
 .contact-side {
   display: grid;
-  gap: 18px;
+  gap: 16px;
   min-width: 0;
+  width: 100%;
 }
 
-/* Form container */
+/* Contact form */
 
 .contact-form {
   display: grid;
-  gap: 18px;
+  gap: 17px;
+  width: 100%;
   min-width: 0;
-  padding: 26px;
+  margin: 0;
+  padding: clamp(20px, 3vw, 28px);
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  background: linear-gradient(
-    145deg,
-    rgba(16, 36, 58, 0.82),
-    rgba(8, 20, 34, 0.94)
-  );
-  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.16);
+  background: var(--surface);
+  box-shadow: 0 16px 42px rgba(0, 0, 0, 0.18);
 }
 
 .form-field {
   display: grid;
-  gap: 8px;
+  gap: 7px;
   min-width: 0;
+  width: 100%;
 }
 
 .form-field label {
@@ -687,22 +689,29 @@ img {
   font-weight: 650;
 }
 
-/* Form controls */
+/* Form controls: consistent width, colors and alignment */
 
 .form-field input,
 .form-field select,
 .form-field textarea {
   display: block;
   width: 100%;
+  max-width: 100%;
   min-width: 0;
-  padding: 13px 14px;
-  border: 1px solid var(--border);
-  border-radius: 9px;
-  background: rgba(4, 10, 19, 0.78);
+  margin: 0;
+  padding: 12px 14px;
+  border: 1px solid rgba(137, 183, 218, 0.23);
+  border-radius: 10px;
+  background: var(--background-deep);
   color: var(--text);
-  font: inherit;
-  font-size: 0.94rem;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  font-family: inherit;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  box-shadow: none;
+  transition:
+    border-color 0.2s ease,
+    background 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 .form-field input,
@@ -714,10 +723,15 @@ img {
   cursor: pointer;
 }
 
+.form-field select option {
+  background: var(--surface);
+  color: var(--text);
+}
+
 .form-field textarea {
   min-height: 150px;
   resize: vertical;
-  line-height: 1.6;
+  line-height: 1.65;
 }
 
 .form-field input::placeholder,
@@ -726,12 +740,19 @@ img {
   opacity: 1;
 }
 
+.form-field input:hover,
+.form-field select:hover,
+.form-field textarea:hover {
+  border-color: rgba(66, 217, 245, 0.4);
+}
+
 .form-field input:focus,
 .form-field select:focus,
 .form-field textarea:focus {
   outline: none;
   border-color: var(--cyan);
-  box-shadow: 0 0 0 3px rgba(66, 217, 245, 0.1);
+  background: #061321;
+  box-shadow: 0 0 0 3px rgba(66, 217, 245, 0.11);
 }
 
 .form-field input:focus-visible,
@@ -744,12 +765,21 @@ img {
 /* Submit button */
 
 .contact-submit {
+  display: flex;
   width: 100%;
   min-height: 50px;
+  margin: 0;
   border: 0;
+  border-radius: 10px;
   cursor: pointer;
-  font: inherit;
+  font-family: inherit;
+  font-size: 0.96rem;
   font-weight: 750;
+  text-align: center;
+}
+
+.contact-submit:hover {
+  background: #81ebfb;
 }
 
 .contact-submit:focus-visible {
@@ -765,21 +795,25 @@ img {
 /* Form privacy note */
 
 .form-note {
-  margin: -3px 0 0;
+  margin: -2px 0 0;
   color: var(--muted);
-  font-size: 0.79rem;
-  line-height: 1.65;
+  font-size: 0.8rem;
+  line-height: 1.7;
 }
 
-/* Honeypot spam protection field */
+/* Honeypot spam protection: hidden from visitors */
 
 .form-honeypot {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-  clip-path: inset(50%);
-  white-space: nowrap;
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  clip-path: inset(50%) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
 }
 
 /* Contact information cards */
@@ -787,10 +821,11 @@ img {
 .contact-info-card {
   display: grid;
   gap: 7px;
-  padding: 22px;
+  min-width: 0;
+  padding: 21px 22px;
   border: 1px solid var(--border);
   border-radius: 14px;
-  background: rgba(12, 26, 43, 0.65);
+  background: var(--surface);
 }
 
 .contact-card-label {
@@ -801,9 +836,16 @@ img {
   text-transform: uppercase;
 }
 
+.contact-info-card strong {
+  color: var(--text);
+  font-weight: 700;
+  overflow-wrap: anywhere;
+}
+
 .contact-info-card > span:last-child {
   color: var(--muted);
   font-size: 0.9rem;
+  line-height: 1.65;
 }
 
 /* Footer */
@@ -856,7 +898,12 @@ img {
   }
 
   .contact-section {
-    gap: 30px;
+    grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+    gap: 28px;
+  }
+
+  .contact-form {
+    padding: 22px;
   }
 }
 
@@ -1000,7 +1047,7 @@ img {
 
   .about-section,
   .contact-section {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     gap: 30px;
   }
 
@@ -1012,9 +1059,13 @@ img {
     max-height: 200px;
   }
 
+  .contact-side {
+    width: 100%;
+  }
+
   .contact-form {
-    padding: 19px;
     gap: 16px;
+    padding: 19px;
   }
 
   .form-field input,
@@ -1025,6 +1076,10 @@ img {
 
   .form-field textarea {
     min-height: 140px;
+  }
+
+  .contact-info-card {
+    padding: 19px;
   }
 
   .site-footer {
