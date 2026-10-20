@@ -3,11 +3,15 @@
 
 const translations = {
   sv: {
+    metaDescription: "EMK Cyber Solutions erbjuder IT-support, datorhjälp, nätverk, Wi-Fi, installation och webbutveckling för kunder på distans världen över och på plats efter överenskommelse.",
+
     navServices: "Tjänster",
     navPrices: "Priser",
     navAbout: "Om oss",
     navContact: "Kontakt",
     navGetHelp: "Få hjälp",
+    navAriaLabel: "Huvudmeny",
+    trustStripAriaLabel: "Tjänsteinformation",
 
     heroEyebrow: "IT-SUPPORT · NÄTVERK · WEBBUTVECKLING",
     heroTitle: "Din partner i en digital värld.",
@@ -48,6 +52,9 @@ const translations = {
     pricingTitle: "Vad kostar IT-hjälp?",
     pricingIntro: "Fasta grundpriser inklusive moms för privatpersoner.",
     currencyLabel: "Visa priser i",
+    currencySEK: "SEK — Svenska kronor",
+    currencyEUR: "EUR — Euro",
+    currencyUSD: "USD — US-dollar",
     currencyLoading: "Hämtar växelkurs …",
     currencyReady: "Uppskattade priser. Kursunderlaget uppdaterades: ",
     currencyFallback: "Växelkursen kunde inte hämtas. Priserna visas i SEK.",
@@ -73,22 +80,48 @@ const translations = {
 
     contactEyebrow: "KONTAKTA OSS",
     contactTitle: "Behöver du IT-hjälp?",
-    contactText: "Beskriv kort vad du behöver hjälp med så kan vi diskutera nästa steg.",
+    contactText: "Fyll i formuläret så beskriver du ditt ärende direkt till oss. Vi återkopplar så snart vi kan.",
     contactEmailButton: "Skicka e-post",
     contactBusinessLabel: "Företag",
     contactLocation: "Borlänge med omnejd · Distansservice",
     contactServicesLabel: "Tjänster",
     contactServicesText: "IT-support, nätverk och webb",
     contactQuoteText: "Webbprojekt offereras separat.",
+
+    formNameLabel: "Namn *",
+    formNamePlaceholder: "Ditt namn",
+    formEmailLabel: "E-postadress *",
+    formPhoneLabel: "Telefonnummer (valfritt)",
+    formPhonePlaceholder: "Ditt telefonnummer",
+    formServiceLabel: "Vad behöver du hjälp med? *",
+    formServicePlaceholder: "Välj en tjänst",
+    formServiceComputer: "Datorhjälp",
+    formServiceInternet: "Internet & Wi-Fi",
+    formServiceInstallation: "Installation & konfigurering",
+    formServiceCleanup: "Rensning & optimering",
+    formServiceWeb: "Hemsidor & webbutveckling",
+    formServiceBusiness: "Företag eller BRF",
+    formServiceOther: "Annat ärende",
+    formMessageLabel: "Meddelande *",
+    formMessagePlaceholder: "Beskriv ditt ärende och vad du behöver hjälp med...",
+    formHoneypotLabel: "Lämna detta fält tomt",
+    formSubmit: "Skicka förfrågan",
+    formNote: "Dina uppgifter används för att hantera och besvara din förfrågan. Skicka inte lösenord eller andra känsliga uppgifter via formuläret.",
+    formSubject: "Ny kundförfrågan – EMK Cyber Solutions",
+
     backToTop: "Till toppen ↑"
   },
 
   en: {
+    metaDescription: "EMK Cyber Solutions provides IT support, computer assistance, networking, Wi-Fi, installation and web development remotely worldwide and on-site by arrangement.",
+
     navServices: "Services",
     navPrices: "Prices",
     navAbout: "About",
     navContact: "Contact",
     navGetHelp: "Get help",
+    navAriaLabel: "Main navigation",
+    trustStripAriaLabel: "Service information",
 
     heroEyebrow: "IT SUPPORT · NETWORKING · WEB DEVELOPMENT",
     heroTitle: "Your partner in a digital world.",
@@ -129,6 +162,9 @@ const translations = {
     pricingTitle: "What does IT support cost?",
     pricingIntro: "Fixed base prices including Swedish VAT for private customers.",
     currencyLabel: "Display prices in",
+    currencySEK: "SEK — Swedish kronor",
+    currencyEUR: "EUR — Euro",
+    currencyUSD: "USD — US dollars",
     currencyLoading: "Loading exchange rate …",
     currencyReady: "Estimated prices. Rate data last updated: ",
     currencyFallback: "Exchange rates could not be retrieved. Prices are shown in SEK.",
@@ -154,13 +190,35 @@ const translations = {
 
     contactEyebrow: "GET IN TOUCH",
     contactTitle: "Need IT support?",
-    contactText: "Briefly describe what you need help with so we can discuss the next steps.",
+    contactText: "Complete the form to describe your enquiry directly to us. We will get back to you as soon as we can.",
     contactEmailButton: "Send an email",
     contactBusinessLabel: "Business",
     contactLocation: "Borlänge area · Remote support",
     contactServicesLabel: "Services",
     contactServicesText: "IT support, networking and websites",
     contactQuoteText: "Website projects are quoted separately.",
+
+    formNameLabel: "Name *",
+    formNamePlaceholder: "Your name",
+    formEmailLabel: "Email address *",
+    formPhoneLabel: "Phone number (optional)",
+    formPhonePlaceholder: "Your phone number",
+    formServiceLabel: "What do you need help with? *",
+    formServicePlaceholder: "Choose a service",
+    formServiceComputer: "Computer support",
+    formServiceInternet: "Internet & Wi-Fi",
+    formServiceInstallation: "Installation & configuration",
+    formServiceCleanup: "Cleanup & optimisation",
+    formServiceWeb: "Websites & web development",
+    formServiceBusiness: "Business or housing association",
+    formServiceOther: "Other enquiry",
+    formMessageLabel: "Message *",
+    formMessagePlaceholder: "Describe your issue and what you need help with...",
+    formHoneypotLabel: "Leave this field empty",
+    formSubmit: "Send enquiry",
+    formNote: "Your information will be used to process and respond to your enquiry. Do not submit passwords or other sensitive information through this form.",
+    formSubject: "New customer enquiry – EMK Cyber Solutions",
+
     backToTop: "Back to top ↑"
   }
 };
@@ -184,17 +242,48 @@ let ratesAvailable = false;
 function translatePage(language) {
   currentLanguage = language === "en" ? "en" : "sv";
 
+  const dictionary = translations[currentLanguage];
+
   document.documentElement.lang = currentLanguage;
   document.title = currentLanguage === "en"
     ? "EMK Cyber Solutions | IT Support & Web Development"
     : "EMK Cyber Solutions | IT-support & webbutveckling";
 
+  const metaDescription = document.querySelector('meta[name="description"]');
+
+  if (metaDescription) {
+    metaDescription.content = dictionary.metaDescription;
+  }
+
   document.querySelectorAll("[data-i18n]").forEach((element) => {
     const key = element.dataset.i18n;
-    const translatedText = translations[currentLanguage][key];
 
-    if (translatedText !== undefined) {
-      element.textContent = translatedText;
+    if (dictionary[key] !== undefined) {
+      element.textContent = dictionary[key];
+    }
+  });
+
+  document.querySelectorAll("[data-i18n-placeholder]").forEach((element) => {
+    const key = element.dataset.i18nPlaceholder;
+
+    if (dictionary[key] !== undefined) {
+      element.placeholder = dictionary[key];
+    }
+  });
+
+  document.querySelectorAll("[data-i18n-aria-label]").forEach((element) => {
+    const key = element.dataset.i18nAriaLabel;
+
+    if (dictionary[key] !== undefined) {
+      element.setAttribute("aria-label", dictionary[key]);
+    }
+  });
+
+  document.querySelectorAll("[data-i18n-value]").forEach((element) => {
+    const key = element.dataset.i18nValue;
+
+    if (dictionary[key] !== undefined) {
+      element.value = dictionary[key];
     }
   });
 
@@ -223,13 +312,15 @@ function formatCurrency(amount, currency) {
 function updateCurrencyStatus(displayCurrency) {
   if (!currencyStatus) return;
 
+  const dictionary = translations[currentLanguage];
+
   if (displayCurrency === "SEK") {
-    currencyStatus.textContent = translations[currentLanguage].currencySek;
+    currencyStatus.textContent = dictionary.currencySek;
     return;
   }
 
   if (!ratesAvailable || !rateUpdatedAt) {
-    currencyStatus.textContent = translations[currentLanguage].currencyFallback;
+    currencyStatus.textContent = dictionary.currencyFallback;
     return;
   }
 
@@ -242,8 +333,7 @@ function updateCurrencyStatus(displayCurrency) {
     timeZone: "UTC"
   }).format(rateUpdatedAt);
 
-  currencyStatus.textContent =
-    translations[currentLanguage].currencyReady + dateText;
+  currencyStatus.textContent = dictionary.currencyReady + dateText;
 }
 
 function renderPrices() {
@@ -325,7 +415,6 @@ async function loadExchangeRates() {
     }
 
     const data = await response.json();
-
     const eurRate = Number(data?.rates?.EUR);
     const usdRate = Number(data?.rates?.USD);
 
