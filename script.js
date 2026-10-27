@@ -108,7 +108,7 @@ const translations = {
     formMessagePlaceholder: "Beskriv ditt ärende och vad du behöver hjälp med...",
     formHoneypotLabel: "Lämna detta fält tomt",
     formSubmit: "Skicka förfrågan",
-    formNote: "Dina uppgifter används för att hantera och besvara din förfrågan. Skicka inte lösenord eller andra känsliga uppgifter via formuläret.",
+    formNote: "Dina uppgifter används för att hantera och besvara din förfrågan. Skicka inte lösenord eller andra känsliga uppgifter via formuläret. Besök på sajten räknas anonymt och utan kakor via Cloudflare Web Analytics.",
     formSubject: "Ny kundförfrågan – EMK Cyber Solutions",
 
     backToTop: "Till toppen ↑"
@@ -220,7 +220,7 @@ const translations = {
     formMessagePlaceholder: "Describe your issue and what you need help with...",
     formHoneypotLabel: "Leave this field empty",
     formSubmit: "Send enquiry",
-    formNote: "Your information will be used to process and respond to your enquiry. Do not submit passwords or other sensitive information through this form.",
+    formNote: "Your information will be used to process and respond to your enquiry. Do not submit passwords or other sensitive information through this form. Visits to this site are counted anonymously and without cookies using Cloudflare Web Analytics.",
     formSubject: "New customer enquiry – EMK Cyber Solutions",
 
     backToTop: "Back to top ↑"
